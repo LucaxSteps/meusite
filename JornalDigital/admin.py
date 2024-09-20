@@ -23,13 +23,12 @@ class NoticiaAdmin(admin.ModelAdmin):
     autocomplete_fields = ('autor',)
 
 class ComentarioAdmin(admin.ModelAdmin):
-    list_display = ('noticia', 'autor', 'data_criacao')
+    list_display = ('noticia', 'autor', 'data')
     search_fields = ('conteudo',)
-    list_filter = ('data_criacao',)
-    ordering = ('-data_criacao',)
+    list_filter = ('data',)
+    ordering = ('-data',)
     raw_id_fields = ('noticia', 'autor')
 
-# Registrando os modelos no admin
 admin.site.register(Edicao, EdicaoAdmin)
 admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Comentario, ComentarioAdmin)
